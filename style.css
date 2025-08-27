@@ -39,21 +39,29 @@ section{
 }
 
 .section1{
-    justify-content: center;
+    position: relative;         /* Родитель для absolute-позиционированной картинки */
+    display: flex;              /* Размещаем текст и картинку рядом */
+    align-items: center;        /* Центрируем по вертикали */
+    justify-content: left;/* Текст слева */
+    min-height: 300px;          /* Задаём высоту секции, чтобы следующая не наезжала */
+    border-radius: 8px;
+    padding: 40px 60px;
 }
 
 .section1>img{
     position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: -1;
 }
 
 .section1>div{
     position: relative;
-    left: -300px;
     display: flex;
     flex-direction: column;
-    top: 40px;
     gap: 20px;
+    text-align: left;
 }
 
 .section1>div>button{
@@ -74,6 +82,8 @@ section{
 }
 
 .section2{
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0;
 }
 
